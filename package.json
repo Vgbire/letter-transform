@@ -10,21 +10,21 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:case-transform.helloWorld"
+    "onCommand:case-transform.upper"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "case-transform.helloWorld",
-        "title": "Hello World"
+        "command": "case-transform.upper",
+        "title": "upper"
       }
     ],
     "menus": {
       "editor/context": [
         {
           "when": "editorHasSelection",
-          "command": "case-transform.helloWorld",
+          "command": "case-transform.upper",
           "group": "navigation"
         }
       ]
