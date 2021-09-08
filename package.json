@@ -1,7 +1,12 @@
 {
-  "name": "case-transform",
-  "displayName": "case transform",
-  "description": "Letter case conversion",
+  "name": "letter-transform",
+  "publisher": "Vgbire",
+  "displayName": "letTrans",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs/vue.git"
+  },
+  "description": "Letter case transformation",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.59.0"
@@ -17,7 +22,19 @@
     "commands": [
       {
         "command": "case-transform.upper",
-        "title": "upper"
+        "title": "转成大写"
+      },
+      {
+        "command": "case-transform.lower",
+        "title": "转成小写"
+      },
+      {
+        "command": "case-transform.camel",
+        "title": "驼峰命名"
+      },
+      {
+        "command": "case-transform.underline",
+        "title": "下划线命名"
       }
     ],
     "menus": {
@@ -25,6 +42,21 @@
         {
           "when": "editorHasSelection",
           "command": "case-transform.upper",
+          "group": "navigation"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "case-transform.lower",
+          "group": "navigation"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "case-transform.camel",
+          "group": "navigation"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "case-transform.underline",
           "group": "navigation"
         }
       ]
