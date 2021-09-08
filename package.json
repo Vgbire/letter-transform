@@ -2,11 +2,16 @@
   "name": "letter-transform",
   "publisher": "Vgbire",
   "displayName": "letTrans",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Vgbire/letter-transform"
-  },
   "description": "Letter case transformation",
+  "repository": "https://github.com/Vgbire/letter-transform",
+  "icon": "https://github.com/Vgbire/letter-transform/blob/main/images/icon.png",
+  "homepage": "https://github.com/Vgbire/letter-transform/blob/main/README.md",
+  "keywords": [
+    "transform",
+    "upperCase",
+    "lowerCase",
+    "camel"
+  ],
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.59.0"
