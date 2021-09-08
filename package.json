@@ -3,8 +3,11 @@
   "publisher": "Vgbire",
   "displayName": "letTrans",
   "description": "Letter case transformation",
-  "repository": "https://github.com/Vgbire/letter-transform",
-  "icon": "https://github.com/Vgbire/letter-transform/blob/main/images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vgbire/letter-transform"
+  },
+  "icon": "images/icon.png",
   "homepage": "https://github.com/Vgbire/letter-transform/blob/main/README.md",
   "keywords": [
     "transform",
@@ -20,7 +23,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:case-transform.upper"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
