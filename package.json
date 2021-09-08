@@ -4,7 +4,7 @@
   "displayName": "letTrans",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue.git"
+    "url": "git+https://github.com/Vgbire/letter-transform"
   },
   "description": "Letter case transformation",
   "version": "0.0.1",
