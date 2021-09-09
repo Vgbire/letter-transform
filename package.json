@@ -1,8 +1,8 @@
 {
   "name": "letter-transform",
   "publisher": "Vgbire",
-  "displayName": "letTrans",
-  "description": "Letter case transformation",
+  "displayName": "Vartrans",
+  "description": "Conversion for multi cursor string case, hump naming and underline naming",
   "repository": {
     "type": "git",
     "url": "https://github.com/Vgbire/letter-transform"
@@ -13,17 +13,22 @@
     "transform",
     "upperCase",
     "lowerCase",
-    "camel"
+    "camel",
+    "大写",
+    "小写",
+    "驼峰",
+    "下划线",
+    "转换"
   ],
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.59.0"
   },
   "categories": [
-    "Other"
+    "Formatters"
   ],
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
