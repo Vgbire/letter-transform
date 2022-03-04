@@ -1,13 +1,15 @@
 import * as vscode from 'vscode'
 
-const camelizeRE = /_(\w)/g
+const camelizeRE = /[_-\s]+(\w)/g
 export const camelize = (str: string): string => {
   return str.replace(camelizeRE, (_, c) => (c ? c.toUpperCase() : ''))
 }
 
 const underlineRE = /\B([A-Z])/g
 export const underline = (str: string): string => {
-  return str.replace(underlineRE, '_$1').toLowerCase()
+  // 先统一转成驼峰之后统一处理
+  let camelize = str.replace(camelizeRE, (_, c) => (c ? c.toUpperCase() : ''))
+  return camelize.replace(underlineRE, '_$1').toLowerCase().replace('/s/g', '_')
 }
 
 export function activate(context: vscode.ExtensionContext) {
