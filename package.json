@@ -1,7 +1,7 @@
 {
   "name": "letter-transform",
   "publisher": "Vgbire",
-  "displayName": "Vartrans",
+  "displayName": "letter-transform",
   "description": "Conversion for multi cursor string case, hump naming and underline naming",
   "repository": {
     "type": "git",
