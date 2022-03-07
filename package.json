@@ -20,7 +20,7 @@
     "下划线",
     "转换"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.59.0"
   },
@@ -34,43 +34,99 @@
   "contributes": {
     "commands": [
       {
-        "command": "case-transform.upper",
-        "title": "转成大写"
-      },
-      {
-        "command": "case-transform.lower",
-        "title": "转成小写"
-      },
-      {
         "command": "case-transform.camel",
-        "title": "驼峰命名"
+        "title": "驼峰(CamelCased)"
       },
       {
         "command": "case-transform.underline",
-        "title": "下划线命名"
+        "title": "下划线(UnderScoreCase)"
+      },
+      {
+        "command": "case-transform.kebab",
+        "title": "短横线(KebabCase)"
+      },
+      {
+        "command": "case-transform.upper",
+        "title": "大写(Upper)"
+      },
+      {
+        "command": "case-transform.lower",
+        "title": "小写(Lower)"
+      },
+      {
+        "command": "case-transform.pascal",
+        "title": "帕斯卡(Pascal)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "case-transform.camel",
+        "key": "ctrl+1",
+        "mac": "cmd+1",
+        "when": "editorHasSelection"
+      },
+      {
+        "command": "case-transform.underline",
+        "key": "ctrl+2",
+        "mac": "cmd+2",
+        "when": "editorHasSelection"
+      },
+      {
+        "command": "case-transform.kebab",
+        "key": "ctrl+3",
+        "mac": "cmd+3",
+        "when": "editorHasSelection"
+      },
+      {
+        "command": "case-transform.upper",
+        "key": "ctrl+4",
+        "mac": "cmd+4",
+        "when": "editorHasSelection"
+      },
+      {
+        "command": "case-transform.lower",
+        "key": "ctrl+5",
+        "mac": "cmd+5",
+        "when": "editorHasSelection"
+      },
+      {
+        "command": "case-transform.pascal",
+        "key": "ctrl+6",
+        "mac": "cmd+6",
+        "when": "editorHasSelection"
       }
     ],
     "menus": {
       "editor/context": [
         {
           "when": "editorHasSelection",
-          "command": "case-transform.upper",
-          "group": "navigation"
-        },
-        {
-          "when": "editorHasSelection",
-          "command": "case-transform.lower",
-          "group": "navigation"
-        },
-        {
-          "when": "editorHasSelection",
           "command": "case-transform.camel",
-          "group": "navigation"
+          "group": "navigation@5"
         },
         {
           "when": "editorHasSelection",
           "command": "case-transform.underline",
-          "group": "navigation"
+          "group": "navigation@6"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "case-transform.kebab",
+          "group": "navigation@7"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "case-transform.upper",
+          "group": "navigation@8"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "case-transform.lower",
+          "group": "navigation@9"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "case-transform.pascal",
+          "group": "navigation@10"
         }
       ]
     }
