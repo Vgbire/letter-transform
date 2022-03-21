@@ -2,7 +2,9 @@ import { ExtensionContext, commands } from 'vscode'
 
 const camelizeRE = /[_-\s]+(\w)/g
 export const camelize = (str: string): string => {
-  return str.replace(camelizeRE, (_, c) => (c ? c.toUpperCase() : ''))
+  let result = str.replace(camelizeRE, (_, c) => (c ? c.toUpperCase() : ''))
+  result = result[0].toLowerCase() + result.slice(1)
+  return result
 }
 
 export const pascal = (str: string): string => {
