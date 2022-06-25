@@ -1,4 +1,4 @@
-import { ExtensionContext, commands } from 'vscode'
+import { ExtensionContext, commands, Position, window } from 'vscode'
 
 const camelizeRE = /[_-\s]+(\w)/g
 export const camelize = (str: string): string => {
@@ -67,6 +67,32 @@ export function activate(context: ExtensionContext) {
     commands.registerTextEditorCommand('case-transform.pascal', (textEditor, edit) => {
       textEditor.selections.forEach((item) => {
         edit.replace(item, pascal(textEditor.document.getText(item)))
+      })
+    }),
+  )
+
+  context.subscriptions.push(
+    commands.registerCommand('case-transform.cls', () => {
+      const editor: any = window.activeTextEditor
+      const document = editor.document
+      editor.selections.forEach((item: any) => {
+        const lineNumber = item.active.line
+        const isMaxLine = lineNumber + 1 >= document.lineCount
+        let text = document.getText(item)
+        if (item.isEmpty) {
+          const lineText = document.lineAt(lineNumber).text
+          console.log(lineText)
+          const before = lineText.slice(0, item.start.character)
+          const after = lineText.slice(item.end.character)
+
+          text = (before.match(/[\w]+$/)?.[0] || '') + (after.match(/^[\w]+/)?.[0] || '')
+        }
+        editor.edit((editBuilder: any) => {
+          editBuilder.insert(
+            new Position(isMaxLine ? document.lineCount : lineNumber + 1, 0),
+            `${isMaxLine ? '\n' : ''}console.log(${text})\n`,
+          )
+        })
       })
     }),
   )
