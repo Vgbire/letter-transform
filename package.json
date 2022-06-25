@@ -20,7 +20,7 @@
     "下划线",
     "转换"
   ],
-  "version": "1.2.0",
+  "version": "1.3.0",
   "engines": {
     "vscode": "^1.59.0"
   },
@@ -56,44 +56,47 @@
       {
         "command": "case-transform.pascal",
         "title": "帕斯卡(Pascal)"
+      },
+      {
+        "command": "case-transform.cls",
+        "title": "cls"
       }
     ],
     "keybindings": [
       {
         "command": "case-transform.camel",
-        "key": "ctrl+1",
-        "mac": "cmd+1",
+        "key": "Ctrl+1",
         "when": "editorHasSelection"
       },
       {
         "command": "case-transform.underline",
-        "key": "ctrl+2",
-        "mac": "cmd+2",
+        "key": "Ctrl+2",
         "when": "editorHasSelection"
       },
       {
         "command": "case-transform.kebab",
-        "key": "ctrl+3",
-        "mac": "cmd+3",
+        "key": "Ctrl+3",
         "when": "editorHasSelection"
       },
       {
         "command": "case-transform.upper",
-        "key": "ctrl+4",
-        "mac": "cmd+4",
+        "key": "Ctrl+4",
         "when": "editorHasSelection"
       },
       {
         "command": "case-transform.lower",
-        "key": "ctrl+5",
-        "mac": "cmd+5",
+        "key": "Ctrl+5",
         "when": "editorHasSelection"
       },
       {
         "command": "case-transform.pascal",
-        "key": "ctrl+6",
-        "mac": "cmd+6",
+        "key": "Ctrl+6",
         "when": "editorHasSelection"
+      },
+      {
+        "command": "case-transform.cls",
+        "key": "Shift+e",
+        "when": "editorTextFocus"
       }
     ],
     "menus": {
