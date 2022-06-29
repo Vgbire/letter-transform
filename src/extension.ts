@@ -72,28 +72,27 @@ export function activate(context: ExtensionContext) {
   )
 
   context.subscriptions.push(
-    commands.registerCommand('case-transform.cls', () => {
+    commands.registerCommand('case-transform.cls', async () => {
       const editor: any = window.activeTextEditor
       const document = editor.document
-      editor.selections.forEach((item: any) => {
-        const lineNumber = item.active.line
+      for (let index = 0; index < editor.selections.length; index++) {
+        const selection = editor.selections[index]
+        const lineNumber = selection.active.line
         const isMaxLine = lineNumber + 1 >= document.lineCount
-        let text = document.getText(item)
-        if (item.isEmpty) {
-          const lineText = document.lineAt(lineNumber).text
-          console.log(lineText)
-          const before = lineText.slice(0, item.start.character)
-          const after = lineText.slice(item.end.character)
-
+        let text = document.getText(selection)
+        const lineText = document.lineAt(lineNumber).text
+        if (selection.isEmpty) {
+          const before = lineText.slice(0, selection.start.character)
+          const after = lineText.slice(selection.end.character)
           text = (before.match(/[\w]+$/)?.[0] || '') + (after.match(/^[\w]+/)?.[0] || '')
         }
-        editor.edit((editBuilder: any) => {
+        await editor.edit((editBuilder: any) => {
           editBuilder.insert(
             new Position(isMaxLine ? document.lineCount : lineNumber + 1, 0),
-            `${isMaxLine ? '\n' : ''}console.log(${text})\n`,
+            `${isMaxLine ? '\n' : ''}${lineText.match(/^\s+/) || ''}console.log(${text})\n`,
           )
         })
-      })
+      }
     }),
   )
 }
