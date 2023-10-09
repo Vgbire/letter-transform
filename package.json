@@ -20,7 +20,7 @@
     "下划线",
     "转换"
   ],
-  "version": "1.3.0",
+  "version": "1.4.1",
   "engines": {
     "vscode": "^1.59.0"
   },
@@ -95,7 +95,7 @@
       },
       {
         "command": "case-transform.cls",
-        "key": "Shift+e",
+        "key": "Ctrl+e",
         "when": "editorTextFocus"
       }
     ],

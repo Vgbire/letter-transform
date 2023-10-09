@@ -8,11 +8,13 @@
 
 2. 也可以使用快捷键 Ctrl + 数字键 123456，分别对应上述的几种命名方式
 
-3. Shift + e 可以快速 console.log(xxx)
+3. Ctrl + e 可以快速 console.log(xxx)
 
 # 如何调试？
 
-使用 vscode 打开项目，按 F5 即可调试插件
+1. 使用 vscode 打开项目
+2. npm i 安装依赖
+3. 按 F5 即可调试插件
 
 # 如何打包发布？
 
